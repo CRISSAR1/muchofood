@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.muchofooduno.view.ui.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_bebidasFragment"
+            app:destination="@id/bebidasFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_ensaladaFragment"
+            app:destination="@id/ensaladaFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mapaFragment"
+            app:destination="@id/mapaFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pizzaFragment"
+            app:destination="@id/pizzaFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_platosFragment"
+            app:destination="@id/platosFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_postresFragment"
+            app:destination="@id/postresFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bebidasFragment"
+        android:name="com.example.muchofooduno.view.ui.fragment.BebidasFragment"
+        android:label="fragment_bebidas"
+        tools:layout="@layout/fragment_bebidas" >
+        <action
+            android:id="@+id/action_bebidasFragment_to_platosFragment"
+            app:destination="@id/platosFragment" />
+        <action
+            android:id="@+id/action_bebidasFragment_to_mapaFragment"
+            app:destination="@id/mapaFragment" />
+        <action
+            android:id="@+id/action_bebidasFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ensaladaFragment"
+        android:name="com.example.muchofooduno.view.ui.fragment.EnsaladaFragment"
+        android:label="fragment_ensalada"
+        tools:layout="@layout/fragment_ensalada" >
+        <action
+            android:id="@+id/action_ensaladaFragment_to_platosFragment"
+            app:destination="@id/platosFragment" />
+        <action
+            android:id="@+id/action_ensaladaFragment_to_mapaFragment"
+            app:destination="@id/mapaFragment" />
+        <action
+            android:id="@+id/action_ensaladaFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapaFragment"
+        android:name="com.example.muchofooduno.view.ui.fragment.MapaFragment"
+        android:label="fragment_mapa"
+        tools:layout="@layout/fragment_mapa" >
+        <action
+            android:id="@+id/action_mapaFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_mapaFragment_to_platosFragment"
+            app:destination="@id/platosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pizzaFragment"
+        android:name="com.example.muchofooduno.view.ui.fragment.PizzaFragment"
+        android:label="fragment_pizza"
+        tools:layout="@layout/fragment_pizza" >
+        <action
+            android:id="@+id/action_pizzaFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_pizzaFragment_to_mapaFragment"
+            app:destination="@id/mapaFragment" />
+        <action
+            android:id="@+id/action_pizzaFragment_to_platosFragment"
+            app:destination="@id/platosFragment" />
+        <action
+            android:id="@+id/action_pizzaFragment_to_loginActivity"
+            app:destination="@id/loginActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/platosFragment"
+        android:name="com.example.muchofooduno.view.ui.fragment.PlatosFragment"
+        android:label="fragment_platos"
+        tools:layout="@layout/fragment_platos" >
+        <action
+            android:id="@+id/action_platosFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_platosFragment_to_mapaFragment"
+            app:destination="@id/mapaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postresFragment"
+        android:name="com.example.muchofooduno.view.ui.fragment.PostresFragment"
+        android:label="fragment_postres"
+        tools:layout="@layout/fragment_postres" >
+        <action
+            android:id="@+id/action_postresFragment_to_mapaFragment"
+            app:destination="@id/mapaFragment" />
+        <action
+            android:id="@+id/action_postresFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_postresFragment_to_platosFragment"
+            app:destination="@id/platosFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.muchofooduno.view.ui.activities.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+</navigation>
