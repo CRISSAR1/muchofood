@@ -26,7 +26,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tipo Postre"
+            android:text="Tipo Pizza"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textAlignment="center"
@@ -50,13 +50,14 @@
             android:id="@+id/precio">
         </TextView>
         <ImageButton
-            android:id="@+id/carritoPostres"
+            android:id="@+id/eliminarCarrito"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="30dp"
             android:layout_toRightOf="@id/tittle"
-            android:src="@drawable/carritodecompras"
-            android:background="@color/teal_700">
+            android:src="@drawable/ic_baseline_delete_24"
+            android:background="@color/black">
+
         </ImageButton>
     </RelativeLayout>
 

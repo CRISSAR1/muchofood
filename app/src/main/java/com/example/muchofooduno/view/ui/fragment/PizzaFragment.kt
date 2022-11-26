@@ -5,24 +5,29 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.muchofooduno.R
+import com.example.muchofooduno.model.pizza
+import com.example.muchofooduno.view.adapter.OnBookItemClickListener
 import com.example.muchofooduno.view.adapter.PizzaAdapter
 import com.example.muchofooduno.viewmodel.pizzaViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 
-class PizzaFragment : Fragment() {
+class PizzaFragment : Fragment(),OnBookItemClickListener {
     lateinit var recyclerPizza: RecyclerView
     lateinit var firebaseAuth: FirebaseAuth
     lateinit var adapter:PizzaAdapter
+    val database:FirebaseFirestore=FirebaseFirestore.getInstance()
 
     private val viewmodel by lazy { ViewModelProvider(this).get(pizzaViewModel::class.java) }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +40,7 @@ class PizzaFragment : Fragment() {
     ): View? {
         val view=inflater.inflate(R.layout.fragment_pizza, container, false)
         recyclerPizza=view.findViewById(R.id.recyclerview)
-        adapter=PizzaAdapter(requireContext())
+        adapter=PizzaAdapter(requireContext(),this)
         recyclerPizza.layoutManager=LinearLayoutManager(context)
         recyclerPizza.adapter=adapter
         observeData()
@@ -62,5 +67,22 @@ class PizzaFragment : Fragment() {
                 }
             }
         }
+    }
+
+    override fun onItemClick(pizza: pizza, position: Int) {
+        val titulo:String=pizza.titulo
+        val precio:String=pizza.precio
+        val image:String=pizza.image
+        val dato= hashMapOf(
+            "titulo" to titulo,
+            "precio" to precio,
+            "image" to image
+        )
+        database.collection("compras")
+            .document(titulo)
+            .set(dato)
+            .addOnSuccessListener {
+                Toast.makeText(context,"Pizza añadida al carrito",Toast.LENGTH_SHORT).show()
+            }
     }
 }

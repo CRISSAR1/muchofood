@@ -29,7 +29,7 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="300dp"
         android:backgroundTint="@color/yellow"
         android:text="Camara"
         android:textStyle="bold">
@@ -40,31 +40,102 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="250dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="300dp"
         android:backgroundTint="@color/teal_700"
         android:text="Galeria"
         android:textStyle="bold">
 
     </Button>
     <EditText
-        android:id="@+id/nombrecompleto"
+        android:id="@+id/nombrePerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="148dp"
-        android:layout_marginTop="480dp"
-        android:text="Cristian Sarmiento"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="350dp"
+        android:text="Nombre"
         android:textIsSelectable="false">
     </EditText>
     <ImageButton
         android:id="@+id/botonEdicionNombre"
         android:layout_width="47dp"
         android:layout_height="33dp"
-        android:layout_marginLeft="310dp"
-        android:layout_marginTop="485dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="360dp"
         android:src="@drawable/editar"
-
         >
+    </ImageButton>
+    <EditText
+        android:id="@+id/apellidoPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="400dp"
+        android:text="Apellido"
+        android:textIsSelectable="false">
+    </EditText>
+    <ImageButton
+        android:id="@+id/botonEdicionApellido"
+        android:layout_width="47dp"
+        android:layout_height="33dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="405dp"
+        android:src="@drawable/editar"
+        >
+    </ImageButton>
+    <EditText
+        android:id="@+id/direccionPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="450dp"
+        android:text="Direccion"
+        android:textIsSelectable="false">
+    </EditText>
+    <ImageButton
+        android:id="@+id/botonEdicionPerfilDireccion"
+        android:layout_width="47dp"
+        android:layout_height="33dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="455dp"
+        android:src="@drawable/editar"
+        >
+    </ImageButton>
 
+    <EditText
+        android:id="@+id/celularPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="500dp"
+        android:text="Celular"
+        android:textIsSelectable="false">
+    </EditText>
+    <ImageButton
+        android:id="@+id/botonEdicionPerfilCelular"
+        android:layout_width="47dp"
+        android:layout_height="33dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="505dp"
+        android:src="@drawable/editar"
+        >
+    </ImageButton>
+    <EditText
+        android:id="@+id/correoPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="550dp"
+        android:text="Correo"
+        android:textIsSelectable="false">
+    </EditText>
+    <ImageButton
+        android:id="@+id/botonEdicionPerfilCorreo"
+        android:layout_width="47dp"
+        android:layout_height="33dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="555dp"
+        android:src="@drawable/editar"
+        >
     </ImageButton>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btmnavigation"

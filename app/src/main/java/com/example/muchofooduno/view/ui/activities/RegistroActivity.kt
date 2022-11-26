@@ -18,6 +18,9 @@ import com.google.firebase.ktx.Firebase
 class RegistroActivity : AppCompatActivity() {
     lateinit var bregistro:Button
     private lateinit var nombre:EditText
+    private lateinit var  apellido:EditText
+    private lateinit var celular:EditText
+    private lateinit var direccion:EditText
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var dbreferencia:DatabaseReference
     private lateinit var database:FirebaseDatabase
@@ -34,15 +37,30 @@ class RegistroActivity : AppCompatActivity() {
         val correo=findViewById<EditText>(R.id.correoRegistro)
         val contrasena=findViewById<EditText>(R.id.contrasenaregistro)
         nombre=findViewById(R.id.nombreRegistro)
+        apellido=findViewById(R.id.apellidoRegistro)
+        celular=findViewById(R.id.celularRegistro)
+        direccion=findViewById(R.id.direccionRegistro)
+
         bregistro.setOnClickListener{
             crearcuenta(correo.text.toString(),contrasena.text.toString())
         }
     }
     private fun crearcuenta(correo:String, contrasena:String){
-        val name:String=nombre.text.toString()
+        val nombre:String=nombre.text.toString()
+        val apellido:String=apellido.text.toString()
+        val celular:String=celular.text.toString()
+        val direccion:String=direccion.text.toString()
+
         firebaseAuth.createUserWithEmailAndPassword(correo,contrasena)
             .addOnCompleteListener(this){
                 Task->if(Task.isSuccessful){
+                    val user=firebaseAuth.currentUser
+                    val userdb=dbreferencia.child(user?.uid.toString())
+                    userdb.child("name").setValue(nombre)
+                    userdb.child("apellido").setValue(apellido)
+                    userdb.child("celular").setValue(celular)
+                    userdb.child("direccion").setValue(direccion)
+
                     Toast.makeText(baseContext,"Registro Exitoso",Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this,HomeActivity::class.java))
             }else{

@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://sche mas.android.com/apk/res-auto"
     android:id="@+id/cardPizza"
     android:layout_margin="12dp"
     app:cardBackgroundColor="@color/yellow_light"
@@ -49,6 +49,17 @@
             android:textSize="20dp"
             android:id="@+id/precio">
         </TextView>
+        <ImageButton
+            android:id="@+id/carritoPizza"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/tittle"
+            android:src="@drawable/carritodecompras"
+            android:background="@color/teal_700"
+            >
+
+        </ImageButton>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

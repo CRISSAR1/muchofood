@@ -45,5 +45,6 @@ class HomeFragment : Fragment() {
         cardCarrito.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_bebidasFragment)
         }
+
     }
 }
